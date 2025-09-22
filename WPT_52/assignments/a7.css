@@ -1,0 +1,50 @@
+/* a. HTML Selectors */
+input {
+    color: white;
+    background-color: teal;
+    font-style: italic;
+    border: 2px solid navy;
+    padding: 5px;
+}
+
+p {
+    color: darkgreen;
+    background-color: lightyellow;
+    font-style: normal;
+    border: 3px dashed green;
+    padding: 10px;
+}
+
+select {
+    color: navy;
+    background-color: lightgray;
+    font-style: oblique;
+    border: 2px dotted purple;
+    padding: 5px;
+}
+
+/* b. Class Selectors */
+.moderate {
+    color: darkblue;
+    background-color: lightblue;
+    font-style: normal;
+    border: 3px solid blue;
+    padding: 10px;
+}
+
+.gaudy {
+    color: yellow;
+    background-color: red;
+    font-style: italic;
+    border: 4px double orange;
+    padding: 10px;
+}
+
+/* c. ID selector */
+#id1 {
+    color: black;
+    background-color: lightgreen;
+    font-style: oblique;
+    border: 5px groove darkgreen;
+    padding: 15px;
+}

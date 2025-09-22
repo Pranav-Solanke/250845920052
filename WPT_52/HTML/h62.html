@@ -1,0 +1,39 @@
+<!-- Write an HTML using internal CSS that has 3 Text Input Fields
+All should shown in one line
+Set the left and right margins to appropriate space
+Set the border to solid blue
+Set border size properly
+Below this show an image , show a rounded border in red color to image
+Adjust the top margin of image to have proper distance from texfields-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body
+            {
+                border:5px solid blue;
+                margin-left: 50px;
+                margin-right: 50px;
+                padding:20px;
+            }
+            #img1
+            {
+                border: 5px solid red;
+                border-radius: 5000px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+</html>
+<body>
+    <label for="Text1">Text input 1 : </label>
+    <input type="text" name="Text1" id="text1">
+    
+    <label for="Text2">Text input 2 : </label>
+    <input type="text" name="Text2" id="text1">
+    
+    <label for="Text3">Text input 3 : </label>
+    <input type="text" name="Text3" id="text1">
+
+    <img src="Tesla.jpg" id="img1" alt="image not displayed">
+</body>

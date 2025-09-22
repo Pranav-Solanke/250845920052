@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM exp</title>
+    </head>
+</html>
+
+<body>
+    <p id="p1">text in p1</p>
+    <p id="p2"></p>
+
+    <script>
+        let text = document.getElementById("p1");
+        document.getElementById("p2").innerHTML = text.innerHTML;
+    </script>
+</body>

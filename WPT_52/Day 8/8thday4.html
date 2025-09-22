@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Quote Scroll</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 50px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #ccc;
+    }
+
+    .quote {
+      position: absolute;
+      white-space: nowrap;
+      font-size: 18px;
+      color: blue;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="box">
+  <div class="quote">"this is a  quote"</div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    let count = 0;
+    const boxWidth = $('.box').width();
+    const quote = $('.quote');
+    const quoteWidth = quote.width();
+    const moveDistance = boxWidth - quoteWidth;
+
+    function scrollLTR() {
+      quote.css({ left: 0 });
+      quote.animate({ left: moveDistance }, 1000, function() {
+        quote.animate({ left: 0 }, 1000, function() {
+          count++;
+          if (count < 4) {
+            scrollLTR();
+          } else {
+            scrollRTL();
+          }
+        });
+      });
+    }
+
+    function scrollRTL()
+    {
+      quote.css({ left: moveDistance });
+      quote.animate({ left: 0 }, 2000);
+    }
+
+    scrollLTR();
+  });
+</script>
+
+</body>
+</html>

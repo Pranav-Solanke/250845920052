@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Text on Multiple Lines when clicked</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p id="Text" style="cursor: pointer;">Click here to print multiple lines below</p>
+
+    <script>
+        $(document).ready(function()
+        {
+            $("#Text").click(function()
+            {
+                $("#Text").html("Hi<br>my<br>name3<br>is<br>pranav<br>solanke");
+            });
+        });
+    </script>
+</body>
+</html>

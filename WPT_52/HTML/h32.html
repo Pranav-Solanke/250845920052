@@ -1,0 +1,21 @@
+<!--<picture> element in CSS-->
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body 
+{
+  background-image: url('Tesla.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+
+  <source media="(min-width: 850px)" srcset="Tesla.jpg">
+  <source media="(min-width: 465px)" srcset="Tesla.jpg">
+  <img src="Tesla.jpg">
+</picture>
+</body>
+</html>

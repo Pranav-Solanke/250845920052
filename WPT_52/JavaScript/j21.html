@@ -1,0 +1,19 @@
+<!--Changing HTML Content using click button-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM exp</title>
+    </head>
+</html>
+
+<body>
+    <p id="p1">text in p1</p>
+    <input type="button" id="b1" value="click here">
+
+    <script>
+        document.getElementById("b1").onclick = function()
+        {
+            document.getElementById("p1").innerHTML = "new text";
+        }
+    </script>
+</body>

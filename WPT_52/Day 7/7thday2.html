@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="myMove()">
+  <div id="d1" style="background-color: rgb(100, 219, 235); width: 80px; height: 50px; position: absolute;"></div>
+
+  <div id="d2" style="background-color: rgb(255, 100, 100); width: 80px; height: 50px; position: absolute;"></div>
+
+</body>
+
+<script>
+function myMove() {
+  let id1 = null;
+  const elem1 = document.getElementById("d1");
+  let pos1 = 0;
+  clearInterval(id1);
+  id1 = setInterval(frame1, 5);
+  function frame1() {
+    if (pos1 == 350) {
+      clearInterval(id1);
+    } else {
+      pos1++;
+      elem1.style.top = pos1 + "px";
+      elem1.style.left = pos1 + "px";
+    }
+  }
+
+  let id2 = null;
+  const elem2 = document.getElementById("d2");
+  let pos2 = 0;
+
+  elem2.style.left = (window.innerWidth - 80) + "px"; 
+
+  clearInterval(id2);
+  id2 = setInterval(frame2, 5);
+  function frame2() {
+    if (pos2 == 350) {
+      clearInterval(id2);
+    } else {
+      pos2++;
+      elem2.style.top = pos2 + "px";
+
+      let currentLeft = parseInt(elem2.style.left, 10);
+      elem2.style.left = (currentLeft - 1) + "px";
+    }
+  }
+}
+</script>
+
+</html>
