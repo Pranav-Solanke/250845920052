@@ -1,0 +1,9 @@
+git config
+git status
+git init
+
+git add .
+
+git config --global user.emal "//add email here"
+git config --global user.name "//add username"
+	

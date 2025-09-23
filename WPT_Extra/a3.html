@@ -1,0 +1,78 @@
+<!--
+3) Use Emojis and Currency Symbols (Refer https://www.w3schools.com/)
+
+4) Create Registration Form using input tags
+	FirstName
+	LastName
+	UserName
+	Email
+	DOB  (Date Controller)
+	Known Languages  (Check Box)
+	Gender (Radio Button)
+	Password 
+	ConfirmPassword 
+	
+	2 buttons  -  Reset Submit -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+</head>
+<body>
+
+  <h2>Registration Form</h2>
+
+  <form>
+    <!-- First Name -->
+    <label for="fname">First Name:</label>
+    <input type="text" id="fname" name="fname" required><br><br>
+
+    <!-- Last Name -->
+    <label for="lname">Last Name:</label>
+    <input type="text" id="lname" name="lname" required><br><br>
+
+    <!-- User Name -->
+    <label for="uname">User Name:</label>
+    <input type="text" id="uname" name="uname" required><br><br>
+
+    <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <!-- DOB -->
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob"><br><br>
+
+    <!-- Known Languages -->
+    <label>Known Languages:</label><br>
+    <input type="checkbox" id="english" name="languages" value="English">
+    <label for="english">English</label>
+    <input type="checkbox" id="marathi" name="languages" value="Marathi">
+    <label for="marathi">Marathi</label>
+    <input type="checkbox" id="hindi" name="languages" value="Hindi">
+    <label for="hindi">Hindi</label><br><br>
+
+    <!-- Gender -->
+    <label>Gender:</label><br>
+    <input type="radio" id="male" name="gender" value="Male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="Female">
+    <label for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="Other">
+    <label for="other">Other</label><br><br>
+
+    <!-- Password -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <!-- Confirm Password -->
+    <label for="confirmpassword">Confirm Password:</label>
+    <input type="password" id="confirmpassword" name="confirmpassword" required><br><br>
+
+    <!-- Buttons -->
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit">
+  </form>
+
+</body>
+</html>
