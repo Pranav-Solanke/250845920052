@@ -1,6 +1,7 @@
 //finding largest element using reduce()
 console.log("reduce")
-function largestElement(arr) {
+function largestElement(arr)
+{
     return arr.reduce((largest, current) =>
             (current > largest ? current : largest),
             arr[0]);
