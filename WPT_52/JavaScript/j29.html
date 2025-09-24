@@ -1,0 +1,30 @@
+<html>
+
+<head>
+   
+</head>
+
+<body>
+
+    <p id="p1">click to see employee data</p>
+  
+<button type="button" onclick="emp.showData()">Click!</button>
+
+     
+<script>
+
+    const emp = {
+
+        eName : "Pranav",
+        salary : 100000000000000000,
+
+        showData :function (){
+        document.getElementById("p1").innerHTML =  emp.eName + " , " + emp.salary;
+    }
+    };
+
+    
+    </script>
+
+</body>
+</html>

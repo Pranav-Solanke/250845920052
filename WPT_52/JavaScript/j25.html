@@ -1,10 +1,30 @@
+<!--program to validate data-->
 <!DOCTYPE html>
 <html>
-<body>
+    <head>
+        <title>my Page</title>
+    </head>
+    <body>
+        <h2>Validation Form</h2>
+        <p>enter number between 1 to 10</p>
+        <input type="text" id="id1"></input>
+        <button type="submit" id="b1" onclick="myfunction()">Submit data</button>
+        <p id="p1"></p>
+        <script>
+            function myfunction()
+            {
+                let x = document.getElementById("id1").value;
 
-<label for="name">Name : </label>
-<input type="text" id="t1" name="name">
-<input type="submit" value="Submit">
+                if(x<1 || x>10)
+                {
+                    document.getElementById("p1").innerHTML ="enter valid input";
+                }
+                else
+                {
+                    document.getElementById("p1").innerHTML ="Valid data";
+                }
+            }
 
-</body>
+        </script>
+    </body>
 </html>

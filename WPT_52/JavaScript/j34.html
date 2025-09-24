@@ -1,0 +1,18 @@
+<!--Event DOM-->
+<!--3-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<button id="b1">click here</button>
+<p id="p1"></p>
+<script>
+document.getElementById('b1').onclick=showdate;
+function showdate()
+{
+    document.getElementById('p1').innerHTML=Date();
+}
+</script>
+
+</body>
+</html>

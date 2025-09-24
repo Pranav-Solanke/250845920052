@@ -1,0 +1,17 @@
+<!--using addEventListener() to show Date on click-->
+
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button type="button" id="id1">click here</button>
+        <p id="p1"></p>
+    </body>
+    <script>
+        document.getElementById('id1').addEventListener("click",showDate);
+        function showDate()
+        {
+            document.getElementById('p1').innerHTML= Date();
+        }
+    </script>
+</html>
