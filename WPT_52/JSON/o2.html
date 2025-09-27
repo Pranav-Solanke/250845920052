@@ -1,0 +1,28 @@
+<!--JSON.parse()-->
+<!--Converting a JSON Text to a JavaScript Object-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+//First, create a JavaScript string containing JSON syntax:
+let text = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+//Then, use the JavaScript built-in function JSON.parse() 
+// to convert the string into a JavaScript object:
+const obj = JSON.parse(text);
+
+//Finally, use the new JavaScript object in your page:
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+
+</body>
+</html>

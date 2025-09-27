@@ -1,0 +1,43 @@
+<!--user input Calculation -->
+<!--use parseFloat() or Number() to convert -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebPage</title>
+    </head>
+    
+    <body>
+
+        <script>
+            let n1 = prompt("enter 1st number : ");
+            let n2 = prompt("Enter 2nd number : ");
+            n1 = parseInt(n1);
+            n2 = parseInt(n2);
+
+            let cal = prompt(" Select operation : add or sub or div or mul");
+            
+            if(cal == "add")
+            {
+                let sum=0;
+                sum=n1+n2;
+                alert("sum is "+sum);
+            }
+            if(cal == "div")
+            {
+                let div = n1/n2;
+                alert("div is "+div);
+            }
+            if(cal == "sub")
+            {
+                let sub = n1-n2;
+                alert("sub is "+sub);
+            }
+            if(cal == "mul")
+            {
+                let mul = n1*n2;
+                alert("mul is "+mul);
+            }
+        </script>
+
+    </body>
+</html>

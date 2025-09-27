@@ -1,0 +1,29 @@
+<!--for in loop , skipped for now-->
+<!--Looping an Object-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Looping Object Properties</h2>
+<p id="demo"></p>
+
+<script>
+const myJSON = '{"name":"John", "age":30, "car":null}';
+const myObj = JSON.parse(myJSON);
+
+let text = "";
+for (const x in myObj) {
+  text += x + ", ";
+}
+document.getElementById("demo").innerHTML = text;
+
+//or
+let text1 = "";
+for (const x in myObj) {
+  text1 += myObj[x] + ", ";
+}
+document.getElementById("demo1").innerHTML = text1;
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!--Callback-->
+<!---->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WebPage</title>
+    </head>
+    
+    <body>
+        <h2>sum using callback is</h2>
+        <p id="p1"></p>
+        <script>
+            
+            function calculation(a,b,myCallback)
+            {
+                let sum = a+b;
+                myCallback(sum);
+            }
+
+            function Display(x)
+            {
+                document.getElementById("p1").innerHTML = x;
+            }
+
+            calculation(10,20,Display);
+        </script>
+        
+    </body>
+</html>

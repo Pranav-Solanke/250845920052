@@ -1,0 +1,38 @@
+
+<!--Collections-->
+
+<!--The getElementsByTagName() method returns an HTMLCollection object.
+
+An HTMLCollection object is an array-like list (collection) of HTML elements.
+
+The following code selects all <p> elements in a document:-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <p>HI this is 1st para</p>
+    <p>HI this is 2nd para</p>
+    <p>HI this is 3rd para</p>
+    <p>HI this is 4rth para</p>
+
+    <script>
+        const myCollection = document.getElementsByTagName("p");
+        
+        for(let i=0;i<myCollection.length;i++)
+        {
+            myCollection[i].style.color = "red";
+        }
+        
+
+    </script>
+
+</body>
+
+</html>
+
+
+

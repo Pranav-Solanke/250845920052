@@ -1,0 +1,31 @@
+<!--Selection/Hiding-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 1: Setup and Hiding</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    
+    <h1 id="main-title">This Title Will Not Hide</h1>
+    
+    <p class="target">This Paragraph (Target 1) will be hidden by jQuery on load.</p>
+    <p>This is a regular paragraph.</p>
+    
+    <div id="secret-div">This entire DIV (Target 2) will also be hidden on load.</div>
+
+    <script>
+        // 2. The core jQuery block - runs when the page is safe to manipulate
+        $(document).ready(function() {
+            
+            // 3. Action 1: Select the element with ID 'secret-div' and hide it instantly.
+            $("#secret-div").hide(); 
+            
+            // 4. Action 2: Select all <p> elements with the class 'target' and hide them.
+            $("p.target").hide(); 
+            
+            // The main-title remains visible because it was not selected.
+        });
+    </script>
+</body>
+</html>

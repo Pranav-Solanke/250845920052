@@ -1,0 +1,30 @@
+<!--Creating New HTML Elements (Nodes)-->
+<!--createElement() , createTextNode() , appendChild()-->
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="d1">
+        <p>HI this is 1st para</p>
+        <p>HI this is 2nd para</p>
+    </div>
+
+    <script>
+        const para = document.createElement("p"); //created paragraph
+        const node = document.createTextNode("HI this is 3rd para , but created using createElement");
+        //created TextNode and assigned text to variable 
+        para.appendChild(node);//made textNode as child of paragraph
+        const element = document.getElementById("d1");
+        element.appendChild(para);//made para as child of element id1
+        
+    </script>
+
+</body>
+
+</html>
+
+
+

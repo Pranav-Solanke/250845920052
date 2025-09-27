@@ -1,0 +1,71 @@
+<!--accpet employee data , validate it , show in form of table-->
+<!--Accept Employee data 
+FirstName  | LastName | email | Date of Birth 
+
+from user 
+	a) perform validation -  data is entered or not 
+                    if not entered then display error msg 
+	b) if data is correct then display data on same page
+                     in table format -->
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table{
+            border-collapse: collapse;
+            width: 500px;
+        }
+        th,td
+        {
+            border: 1px solid black;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <form name="fname" onsubmit="event.preventDefault();ValidateData();">
+        Firstname : <input type="text" id="id1"><br><br>
+        Lastname : <input type="text" id="id2"><br><br>
+        email : <input type="email" id="id3"><br><br>
+        dob : <input type="date" id="id4"><br><br>
+        <button type="submit" value="submit">Submit Data</button>
+        <table id="t1"></table>
+    </form>
+
+<script>
+    function ValidateData()
+    {
+        let fname = document.getElementById("id1").value;
+        let lname = document.getElementById("id2").value;
+        let email = document.getElementById("id3").value;
+        let dob = document.getElementById("id4").value;
+
+        if( fname == "" || lname == "" || email == "" || dob == "")
+        {
+            alert("please enter valid data");
+        }
+        else
+        {
+            let table = document.getElementById("t1");
+            if(table.rows.length === 0)
+            {
+                let row_head =table.insertRow();
+                row_head.innerHTML = "<th>First Name</th><th>Last Name</th><th>Email</th><th>Date of Birth</th>";
+            }
+            
+            let row = table.insertRow();
+            row.insertCell(0).innerText = fname;
+            row.insertCell(1).innerText = lname;
+            row.insertCell(2).innerText = email;
+            row.insertCell(3).innerText = dob;
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+

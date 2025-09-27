@@ -1,0 +1,47 @@
+<!--Creating and Inserting New Elements-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 5: Inserting Content</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #list-container { border: 1px solid #333; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    
+    <h1>Content Insertion</h1>
+    
+    <div id="list-container">
+        <h3>Shopping List:</h3>
+        <ul>
+            <li class="item">Milk</li>
+        </ul>
+    </div>
+    
+    <button id="append-btn">Append Item (at end)</button>
+    <button id="prepend-btn">Prepend Item (at start)</button>
+
+    <script>
+        let itemCounter = 1;
+
+        $(function() {
+            
+            // 1. Append (Adds to the end of the element's content)
+            $("#append-btn").click(function() {
+                itemCounter++;
+                // Select the <ul> tag and add a new <li> to its end.
+                $("#list-container ul").append("<li class='item'>New Item #" + itemCounter + "</li>");
+            });
+
+            // 2. Prepend (Adds to the beginning of the element's content)
+            $("#prepend-btn").click(function() {
+                itemCounter++;
+                // Select the <ul> tag and add a new <li> to its start.
+                $("#list-container ul").prepend("<li class='item'>URGENT Item #" + itemCounter + "</li>");
+            });
+            
+        });
+    </script>
+</body>
+</html>

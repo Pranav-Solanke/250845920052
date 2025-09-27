@@ -1,0 +1,43 @@
+<!--Working with CSS Classes and Chaining-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 3: Classes and Chaining</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        .highlight { background-color: #ff9900; color: white; padding: 10px; }
+        .border { border: 3px solid #007bff; }
+    </style>
+</head>
+<body>
+    
+    <div id="target-box">Click the buttons to change me!</div>
+    
+    <button id="toggle-btn">Toggle Highlight</button>
+    <button id="chain-btn">Do All in One</button>
+
+    <script>
+        $(function() {
+            
+            // 1. Toggling a Class: The easiest way to apply and remove styles.
+            $("#toggle-btn").click(function() {
+                // .toggleClass() adds the class if it's absent, removes it if present.
+                $("#target-box").toggleClass("highlight");
+            });
+
+            // 2. Method Chaining: Run multiple methods on the same selection in one line.
+            $("#chain-btn").click(function() {
+                
+                // Select the target box and apply multiple changes sequentially:
+                $("#target-box")
+                    .text("Chained Actions Complete!") // 1. Change text
+                    .addClass("border")               // 2. Add a new class
+                    .css("font-size", "20px")         // 3. Directly change a CSS property
+                    .delay(2000)                      // 4. Wait for 2 seconds
+                    .removeClass("border");           // 5. Remove the border
+            });
+            
+        });
+    </script>
+</body>
+</html>

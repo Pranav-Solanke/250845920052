@@ -1,0 +1,33 @@
+<!--replacing New HTML Elements (Nodes)-->
+<!--replaceChild()-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="d1">
+        <p id="p1">HI this is 1st para</p>
+        <p>HI this is 2nd para</p>
+    </div>
+
+    <script>
+        const para = document.createElement("p");
+        const node = document.createTextNode("Hi this 3rd para");
+        para.appendChild(node);
+
+        const element = document.getElementById("d1");
+        const child = document.getElementById("p1");
+
+        element.replaceChild(para,child);//paragraph will be replaced by new paragraph
+
+    </script>
+
+</body>
+
+</html>
+
+
+

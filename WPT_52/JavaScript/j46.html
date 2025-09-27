@@ -1,0 +1,43 @@
+<!--Table of number-->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <style>
+    /* This CSS block goes in the <head> section of your HTML file */
+    table {
+        border-collapse: collapse; /* This merges the cell borders into one line */
+        width: 100px; /* Makes the table span the full width of its container */
+    }
+    th, td {
+        border: 1px solid black; /* This adds a 1-pixel solid black border to cells */
+        padding: 2px; /* Adds space inside the cells */
+    }
+</style>
+    <input type="number" id="numInput">
+    <button onclick="generateTable()">Generate Table</button>
+    <table id="t1"></table> 
+
+<script>
+function generateTable()
+{
+  const num = parseInt(document.getElementById("numInput").value);
+  const table = document.getElementById("t1");
+  table.innerHTML = "";
+
+  for (let i = 1; i <= 10; i++)
+  {
+    const row = table.insertRow();
+    row.insertCell(0).innerText = `${num} x ${i}`;
+    row.insertCell(1).innerText = num * i;
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+

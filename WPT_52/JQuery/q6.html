@@ -1,0 +1,47 @@
+<!-- Basic Effects and Animations-->
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 4: Effects and Animations</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #animated-content { 
+            background-color: lightblue; 
+            padding: 20px; 
+            margin-top: 15px; 
+            width: 300px; 
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>jQuery Effects</h1>
+    
+    <button id="slide-btn">Slide Toggle</button>
+    <button id="fade-btn">Fade Toggle</button>
+    
+    <div id="animated-content">
+        This content will slide and fade!
+    </div>
+
+    <script>
+        $(function() {
+            
+            // 1. Slide Animation
+            $("#slide-btn").click(function() {
+                // .slideToggle(speed) animates the height of the element.
+                $("#animated-content").slideToggle(500); // 500ms duration
+            });
+            
+            // 2. Fade Animation
+            $("#fade-btn").click(function() {
+                // .fadeToggle(speed) animates the opacity of the element.
+                // You can use 'slow', 'fast', or milliseconds (500 is used here).
+                $("#animated-content").fadeToggle('slow'); 
+            });
+
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!--Array and operations on it-->
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <h1>Array manipulation</h1>
+    <input type="text" id="id1"><br><br>
+    <button type="button" onclick="AddAtEnd()">Add at End</button>
+    <button type="button" onclick="AddAtStart()">Add at Start</button>
+    <button type="button" onclick="DeleteFromEnd()">Delete from End</button>
+    <button type="button" onclick="DeleteFromStart()">Delete from Start</button>
+    <button type="button" onclick="DisplayOdd()">Display Odd numbers</button>
+    <button type="button" onclick="DisplayEven()">Display even numbers</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+<script>
+    let arr=[];
+    function AddAtEnd()
+    {
+        let x = document.getElementById("id1").value;
+        arr.push(x);
+        document.getElementById("p1").innerHTML = arr;
+    }
+    function AddAtStart()
+    {
+        let x = document.getElementById("id1").value;
+        arr.unshift(x);
+        document.getElementById("p1").innerHTML = arr;
+    }
+    function DeleteFromEnd()
+    {
+        let x = document.getElementById("id1").value;
+        arr.pop(x);
+        document.getElementById("p1").innerHTML = arr;
+    }
+    function DeleteFromStart()
+    {
+        let x = document.getElementById("id1").value;
+        arr.shift(x);
+        document.getElementById("p1").innerHTML = arr;
+    }
+    function DisplayOdd()
+    {
+        let arr2 = arr.filter((val) => val%2!=0);
+        document.getElementById("p2").innerHTML = arr2;
+    }
+    function DisplayEven()
+    {
+        let arr3 = arr.filter((val) => val%2==0);
+        document.getElementById("p3").innerHTML = arr3;
+    }
+</script>
+
+</body>
+</html>

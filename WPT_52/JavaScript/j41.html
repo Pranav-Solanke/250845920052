@@ -1,0 +1,27 @@
+<!--Counter-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Counter</title>
+</head>
+<body>
+
+<h2>Counter</h2>
+    <button type="button" onclick="count()">Count!</button>
+    <p id="p1"></p>
+<script>
+    let cnt=0;
+    function count()
+    {
+        cnt = cnt + 1;
+        display(cnt);
+    }
+    function display(c)
+    {
+        document.getElementById("p1").innerHTML = "count = "+ c;
+    }
+</script>
+
+</body>
+</html>

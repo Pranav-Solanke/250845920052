@@ -1,0 +1,26 @@
+<!--Form Validation-->
+<!--popup-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page</title>
+    </head>
+    <body>
+        <p>enter name</p>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+           name : <input type="text" name="fname">
+            <button type="submit" value="Submit">Submit data</button>
+        </form>
+        <script>
+            function validateForm()
+            {
+                let x = document.forms["myForm"]["fname"].value;
+                if(x=="")
+                {
+                    alert("name cannot be empty");
+                    return false;
+                }
+            }
+        </script>
+    </body>
+</html>

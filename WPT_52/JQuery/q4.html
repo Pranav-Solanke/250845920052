@@ -1,0 +1,38 @@
+<!--Event Handling and DOM Manipulation (Setters)-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lesson 2: Events and Setters</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+        #message { border: 1px solid #ccc; padding: 10px; min-height: 50px; }
+    </style>
+</head>
+<body>
+    
+    <h1>Event Handler Demo</h1>
+    
+    <div id="message">Click the button to change this content!</div>
+    
+    <button id="text-btn">Change to PLAIN Text</button>
+    <button id="html-btn">Change to HTML Markup</button>
+
+    <script>
+        $(function() { // Shorthand for $(document).ready()
+            
+            // 1. Target the button with ID 'text-btn' and attach a click event.
+            $("#text-btn").click(function() {
+                // Use .text() to replace content. It treats the argument as plain text.
+                $("#message").text("This is **plain** text."); 
+            });
+            
+            // 2. Target the button with ID 'html-btn' and attach a click event.
+            $("#html-btn").click(function() {
+                // Use .html() to replace content. It interprets HTML tags (like <b>).
+                $("#message").html("This content is <b>Bold and styled</b>."); 
+            });
+            
+        });
+    </script>
+</body>
+</html>
