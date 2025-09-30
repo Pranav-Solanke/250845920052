@@ -1,0 +1,3 @@
+Links for JSON Data - 
+https://jsonplaceholder.typicode.com/posts
+https://fake-json-api.mock.beeceptor.com/users

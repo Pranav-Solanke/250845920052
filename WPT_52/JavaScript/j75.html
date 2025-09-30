@@ -1,0 +1,47 @@
+<!--jQuery code to apply classes 
+    addClass()
+	removeClass()
+	toggleClass()-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>jQuery Class Methods Example</title>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p id="myParagraph">This is a paragraph.</p>
+  <button id="addBtn">Add Class</button>
+  <button id="removeBtn">Remove Class</button>
+  <button id="toggleBtn">Toggle Class</button>
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // jQuery code to apply classes
+    $(document).ready(function()
+    {
+      $('#addBtn').click(function()
+      {
+        $('#myParagraph').addClass('highlight');
+      });
+
+      $('#removeBtn').click(function()
+      {
+        $('#myParagraph').removeClass('highlight');
+      });
+
+      $('#toggleBtn').click(function()
+      {
+        $('#myParagraph').toggleClass('highlight');
+      });
+    });
+  </script>
+</body>
+</html>

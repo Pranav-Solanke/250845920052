@@ -1,0 +1,29 @@
+<!--try catch finally-->
+<html>
+
+<body>
+    <p id="p1"></p>
+</body>
+
+<script>
+    document.getElementById("p1").innerHTML = "data";
+
+    try
+    {
+        //The try block contains the code that might throw an error.
+    let data = "Content ";
+    document.getElementById("p1").innerHTML = data;
+    } catch (err) 
+    {
+        //The catch block runs only if an error occurs inside the try block.
+        //It receives the error object as a parameter, letting you handle or log the error.
+    document.getElementById("p1").innerHTML = "something went wrong";
+    } 
+    finally 
+    {
+        //The finally block always runs after try and catch, regardless of whether an error happened or not.
+    console.log("Try-catch finished");
+    }
+
+</script>
+</html>

@@ -1,0 +1,44 @@
+<!--same previous code with explaination-->
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+    function loadDoc() {
+        const xhttp = new XMLHttpRequest();
+
+        // 1. Define the function to run when the response is loaded
+        xhttp.onload = function() {
+            // 2. Check the status: 200 means "OK"
+            if (this.status == 200) {
+                // The response is a JSON string, so parse it into a JavaScript object
+                const jsonObject = JSON.parse(this.responseText);
+                
+                // 3. Display a specific property (e.g., 'title') instead of the whole object
+                // If you want to see the whole JSON, use JSON.stringify(jsonObject)
+                document.getElementById("demo").innerHTML = "Post Title: " + jsonObject.title + 
+                                                           "<br>Body: " + jsonObject.body;
+            } else {
+                // Handle non-200 status codes (like 404, 500)
+                document.getElementById("demo").innerHTML = "Error loading data. Status: " + this.status;
+            }
+        };
+
+        // 4. Handle network errors
+        xhttp.onerror = function() {
+            document.getElementById("demo").innerHTML = "Network Error occurred.";
+        };
+
+        // 5. Open and send the request
+        xhttp.open("GET", "https://jsonplaceholder.typicode.com/posts/1", true);
+        xhttp.send();
+    }
+</script>
+
+</body>
+</html>
