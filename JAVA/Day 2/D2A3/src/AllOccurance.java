@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
-public class AllOccurance {
-
+public class AllOccurance
+{
     public static int[] findAllOccurences(int[] arr, int num)
 	{
 		int[] temp=new int[arr.length];
