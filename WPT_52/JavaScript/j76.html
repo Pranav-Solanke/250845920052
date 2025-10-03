@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body
+    {
+        text-align: center;
+    }
+    .calculator
+    {
+        width: 220px;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    .buttons
+    {
+        height: 200px;
+        display:grid;
+        grid-template-columns: repeat(4,1fr);
+        gap: 15px;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" placeholder="0"><br>
+    
+    <div class="buttons">
+
+    <button type="button" onclick="appendValue('1')">1</button>
+    <button type="button" onclick="appendValue('2')">2</button>
+    <button type="button" onclick="appendValue('3')">3</button>
+    <button type="button" onclick="appendValue('/')">/</button>
+
+    <button type="button" onclick="appendValue('4')">4</button>
+    <button type="button" onclick="appendValue('5')">5</button>
+    <button type="button" onclick="appendValue('6')">6</button>
+    <button type="button" onclick="appendValue('*')">X</button>
+
+    <button type="button" onclick="appendValue('7')">7</button>
+    <button type="button" onclick="appendValue('8')">8</button>
+    <button type="button" onclick="appendValue('9')">9</button>
+    <button type="button" onclick="appendValue('-')">-</button>
+
+    <button type="button" onclick="appendValue('0')">0</button>
+    <button type="button" onclick="appendValue('.')">.</button>
+    <button type="button" onclick="Evaluate()">=</button>
+    <button type="button" onclick="appendValue('+')">+</button>
+
+    <button type="button" onclick="clearDisplay()">Clear</button>
+
+    </div>
+    </div>
+
+
+<script>
+    let display = document.getElementById("display");
+    
+    function appendValue(x)
+    {
+        display.value = display.value + x;
+    }
+
+    function clearDisplay()
+    {
+        display.value = "";
+    }
+
+    function Evaluate()
+    {
+        display.value = eval(display.value);
+    }
+</script>
+
+</body>
+</html>
