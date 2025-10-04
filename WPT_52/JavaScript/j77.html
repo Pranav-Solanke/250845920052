@@ -1,34 +1,111 @@
+
+<!--display: flex;
+Makes the entire page use flexbox layout, which helps easily align things inside the body.
+
+justify-content: center;
+Centers items horizontally (left to right) in the middle of the page.
+
+align-items: center;
+Centers items vertically (top to bottom) in the middle of the page.
+
+height: 100vh;
+Makes the body take up the full height of the visible browser window (vh means viewport height).
+
+margin: 0;
+Removes the default space around the body so everything fits exactly.-->
+
+<!--border: 1px solid #ccc;
+Adds a thin, light gray border around the calculator box.
+
+padding: 10px;
+Adds some space inside the calculator box, so content isn’t stuck to the edges.
+
+width: 220px;
+Sets the calculator’s width to 220 pixels.
+
+text-align: center;
+Centers all the text inside the calculator box.-->
+
+<!--width: 100%;
+Makes the display area fill the full width of its container (the calculator).
+
+margin-bottom: 10px;
+Adds space below the display so buttons don’t touch it.
+
+padding: 5px;
+Adds space inside the display so the text doesn’t touch the edges.
+
+font-size: 16px;
+Sets the text size to 16 pixels, making it easy to read.
+
+box-sizing: border-box;
+Ensures padding and borders are included inside the width, so it doesn’t overflow.-->
+
+<!--display: grid;
+Uses grid layout to arrange the buttons in rows and columns.
+
+grid-template-columns: repeat(4, 1fr);
+Creates 4 columns of equal width for the buttons (1fr means one part of the available space).
+
+gap: 5px;
+Adds 5 pixels of space between buttons (both rows and columns).-->
+
+<!--padding: 10px;
+Adds space inside each button to make it bigger and easier to click.
+
+font-size: 16px;
+Sets the text size inside the button to 16 pixels.
+
+cursor: pointer;
+Changes the mouse cursor to a hand icon when hovering over the button (indicating it’s clickable).
+
+width: 100%;
+Makes the button fill the full width of its grid cell.-->
 <!DOCTYPE html>
 <html>
 <head>
   <title>Calculator</title>
   <style>
-body
-{
-  text-align: center;
-  font-family: Arial, sans-serif;
-  margin-top: 50px;
-}
+  body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
 
-#display {
-  width: 200px;
-  height: 30px;
-  font-size: 18px;
-  text-align: right;
-  margin-bottom: 10px;
-}
+  .calculator {
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 220px;
+    text-align: center;
+  }
 
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 50px);
-  gap: 5px;
-}
+  #display {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
 
-button {
-  height: 40px;
-  font-size: 16px;
-  cursor: pointer;
-}
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+</style>
+
+
+</style>
+
 
   </style>
 

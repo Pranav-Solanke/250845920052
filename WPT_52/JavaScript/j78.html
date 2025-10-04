@@ -1,0 +1,106 @@
+<!--Calculator with jQuery-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator with jQuery</title>
+  <style>
+  body {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .calculator {
+    border: 1px solid #000000;
+    padding: 10px;
+    width: 220px;
+    text-align: center;
+  }
+
+  #display {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+</style>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="calculator">
+        <input type="text" id="display" placeholder="0"><br>
+    
+    <div class="buttons">
+
+    <button type="button" data-value="1">1</button>
+    <button type="button" data-value="2">2</button>
+    <button type="button" data-value="3">3</button>
+    <button type="button" data-value="/">/</button>
+
+    <button type="button" data-value="4">4</button>
+    <button type="button" data-value="5">5</button>
+    <button type="button" data-value="6">6</button>
+    <button type="button" data-value="*">X</button>
+
+    <button type="button" data-value="7">7</button>
+    <button type="button" data-value="8">8</button>
+    <button type="button" data-value="9">9</button>
+    <button type="button" data-value="-">-</button>
+
+    <button type="button" data-value="0">0</button>
+    <button type="button" data-value=".">.</button>
+    <button type="button" id="equals">=</button>
+    <button type="button" data-value="+">+</button>
+
+    <button type="button" id="clear">Clear</button>
+
+    </div>
+    </div>
+
+<script>
+  $(document).ready(function()
+  {
+    var $display = $('#display');
+
+    // Append value to display when a button with data-value is clicked
+    $('button[data-value]').click(function(){
+      $display.val($display.val() + $(this).attr('data-value'));
+    });
+
+    // Clear button clears display
+    $('#clear').click(function(){
+      $display.val('');
+    });
+
+    // Evaluate the expression when = button clicked
+    $('#equals').click(function(){
+      try {
+        $display.val(eval($display.val()));
+      } catch(e) {
+        alert('Invalid Expression');
+        $display.val('');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
