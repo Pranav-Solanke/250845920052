@@ -3,7 +3,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-public class StudentService {
+public class StudentService
+	{
    static Student[] studarr;
    static int cnt;
    static {
@@ -26,7 +27,7 @@ public static boolean addNewStudent() {
 	float m2=sc.nextFloat();
 	System.out.println("enter birth date(dd/mm/yyyy)");
 	String dt=sc.next();
-	//conver string to java date
+	//convert string to java date
 	SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy");
 	Date bdt=null;
 	try {
@@ -36,9 +37,11 @@ public static boolean addNewStudent() {
 		e.printStackTrace();
 	}
 	Student s=new Student(sid,nm,m1,m2,bdt);
-	if(cnt==studarr.length) {
+	if(cnt==studarr.length)
+	{
 		return false;
-	}else {
+	}else
+	{
 		studarr[cnt]=s;
 		cnt++;
 		return true;
