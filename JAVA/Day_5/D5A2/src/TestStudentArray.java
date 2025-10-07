@@ -6,7 +6,7 @@ public class TestStudentArray {
 		Scanner sc=new Scanner(System.in);
 		int choice=0;
 		do {
-		System.out.println("1. add new student\n2. display all\n3. search by id");
+		System.out.println("\n1. add new student\n2. display all\n3. search by id");
 		System.out.println("4. search by name\n5. update marks\n6.exit\nchoice:");
 		choice=sc.nextInt();
 		switch(choice) {
@@ -19,14 +19,37 @@ public class TestStudentArray {
 			}
 			
 			break;
+			
 		case 2:
 			StudentService.displayAll();
 			break;
+			
 		case 3:
+			Student s =StudentService.searchById();
+			if(s!=null)
+			{
+				System.out.println(s);
+			}
+			else
+			{
+				System.out.println("Student does not exists");
+			}
 			break;
+			
 		case 4:
+			Student s2 = StudentService.searchByName();
+			if(s2!=null)
+			{
+				System.out.println(s2);
+			}
+			else
+			{
+				System.out.println("Student does not exists");
+			}
 			break;
+			
 		case 5:
+			StudentService.updateMarks();
 			break;
 		case 6:
 			sc.close();

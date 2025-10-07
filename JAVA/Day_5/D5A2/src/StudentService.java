@@ -63,9 +63,75 @@ import java.util.Scanner;
 		}
 		public static void displayAll()
 		{
-			for(Student ele : studarr)
+			for(Student s : studarr)
 			{
-				
+				if(s!=null)
+				{
+					System.out.println(s);
+				}
 			}
+		}
+//		for (dataType element : iterableObject) {
+//		    // block of code to be executed for each element
+//		}
+
+		
+		public static Student searchById()
+		{
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter id to search student : ");
+			int id = sc.nextInt();
+			
+			for(Student s:studarr)
+			{
+				if(s!=null)
+				{
+					if(id==s.getId())
+					{
+						return s;
+					}
+				}
+			}
+			return null;
+		}
+		
+		public static Student searchByName()
+		{
+			Scanner sc = new Scanner(System.in);
+			System.out.println("enter name to search");
+			String name = sc.nextLine();
+			for(Student s:studarr)
+			{
+				if(s!=null)
+				{
+					if(name.equals(s.getName()))
+					{
+						return s;
+					}
+				}
+			}
+			return null;
+		}
+		public static void updateMarks()
+		{
+			Scanner sc = new Scanner(System.in);
+			
+			Student s = searchById();
+			
+			if(s!=null)
+			{
+				System.out.println("enter marks to update for M1 and M2 : ");
+				float marks1 = sc.nextFloat();
+				float marks2 = sc.nextFloat();
+				
+				s.setM1(marks1);
+				s.setM2(marks2);
+				System.out.println("Marks updated successfully");
+			}
+			else
+			{
+				System.out.println("Marks not updated , as students does not exists");
+			}
+			
 		}
 	}
