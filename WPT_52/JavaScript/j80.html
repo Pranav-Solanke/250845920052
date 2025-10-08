@@ -1,0 +1,22 @@
+<!--querySelector()-->
+<!--querySelector() is a DOM method used to select the first HTML element
+ that matches a given CSS selector.-->
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="h1">Welcome</h1>
+  <p class="text">Hello world!</p>
+  <p class="text">Learn JavaScript</p>
+
+  <script>
+    // Select by id
+    document.querySelector("#h1").style.color = "blue";
+
+    // Select by class
+    document.querySelector(".text").style.fontWeight = "bold";
+
+    // Select by tag
+    document.querySelector("p").style.fontSize = "20px";
+  </script>
+</body>
+</html>

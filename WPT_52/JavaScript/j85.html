@@ -1,0 +1,36 @@
+<!--IMP-->
+<!--Form validation with Predefined validations-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <style>
+    input {
+      margin-bottom: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" 
+           required minlength="3" placeholder="Enter your name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" 
+           required placeholder="Enter your email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" 
+           required minlength="6" placeholder="Enter your password">
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" 
+           required min="18" max="100" placeholder="Enter your age">
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

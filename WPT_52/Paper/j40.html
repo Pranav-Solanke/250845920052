@@ -1,0 +1,45 @@
+<!--Form Validation-->
+<!--hidden message gets displayed if value is empty-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Validation Example</title>
+
+<style>
+    .class_hidden
+    {
+        visibility: hidden;
+    }
+</style>
+
+</head>
+<body>
+
+<h2>Form Validation</h2>
+
+<form name="myForm" action="/action_page.php" 
+      onsubmit="return ValidateForm()" method="post">
+    name : <input type="text" name="fname">
+    <p class="class_hidden">Name cannot be empty</p>
+    <button type="submit" value="Submit">Submit</button>
+</form>
+
+<script>
+    function ValidateForm()
+    {
+        let x = document.forms["myForm"]["fname"].value;
+        if(x.trim()=="")
+        {
+            document.getElementsByClassName("class_hidden")[0].style.visibility = 'visible';
+            return false;
+        }
+        else
+        {
+            document.getElementsByClassName("class_hidden")[0].style.visibility = 'hidden';
+            return true;
+        }
+    }
+</script>
+
+</body>
+</html>

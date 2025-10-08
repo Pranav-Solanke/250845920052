@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Username Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    input {
+      margin: 5px 0;
+      padding: 5px;
+    }
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2>Generate Username</h2>
+  <form id="userForm">
+    <label>First Name: </label>
+    <input type="text" id="firstName" required><br>
+    <label>Last Name: </label>
+    <input type="text" id="lastName" required><br>
+    <label>Age: </label>
+    <input type="number" id="age" required><br>
+    <button type="button" onclick="generateUsername()">Generate</button>
+  </form>
+
+  <div id="result"></div>
+
+  <script>
+    function generateUsername() {
+      let firstName = document.getElementById("firstName").value.trim();
+      let lastName = document.getElementById("lastName").value.trim();
+      let age = document.getElementById("age").value.trim();
+
+      if (firstName === "" || lastName === "" || age === "") {
+        document.getElementById("result").innerHTML = "⚠ Please fill all fields.";
+        return;
+      }
+
+      let userName = firstName.substring(0, 2).toLowerCase() + 
+                     lastName.substring(lastName.length - 2).toLowerCase() + 
+                     age;
+
+      document.getElementById("result").innerHTML = "Generated Username: <b>" + userName + "</b>";
+    }
+  </script>
+</body>
+</html>

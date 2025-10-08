@@ -1,0 +1,62 @@
+<!--IMP-->
+<!--Complete form Validation without predifined validation-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name">
+    <span class="error" id="nameError"></span><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Clear previous errors
+      document.getElementById("nameError").innerHTML = "";
+      document.getElementById("msg").innerHTML = "";
+
+      // Get form values
+      const name = document.getElementById("name").value.trim();
+
+      let valid = true;
+
+      // Name validation
+      if (name === "") {
+        document.getElementById("nameError").innerHTML = "<strong>Name is required</strong>";
+        valid = false;
+      } else if (name.length < 3) {
+        document.getElementById("nameError").innerHTML = "<strong>Name must be at least 3 characters</strong>";
+        valid = false;
+      }
+
+      // If all validations pass
+      if (valid) {
+        document.getElementById("msg").innerHTML = "<strong style='color:green;'>Form submitted successfully!</strong>";
+        // You can also send form data to server here
+        // form.submit();
+      }
+    });
+  </script>
+</body>
+</html>

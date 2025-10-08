@@ -1,0 +1,45 @@
+<!--IMP-->
+<!--Complete form Validation without predifined validation-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Email Validation Example</title>
+  
+</head>
+<body>
+<form id="emailForm">
+  <label>Email:</label>
+  <input type="text" id="email">
+  <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+  // Select form and message paragraph
+  let form = document.getElementById("emailForm");
+  let msg = document.getElementById("msg");
+
+  // Listen for form submit
+  form.addEventListener("submit", function(e) {
+    e.preventDefault(); // prevent page reload
+
+    // Get the email input value
+    let email = document.getElementById("email").value.trim();
+
+    // Regular expression for email validation
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Test email
+    if (emailPattern.test(email)) {
+      msg.textContent = "✅ Valid email!";
+      msg.style.color = "green";
+    } else {
+      msg.textContent = "❌ Invalid email!";
+      msg.style.color = "red";
+    }
+  });
+</script>
+
+</body>
+</html>

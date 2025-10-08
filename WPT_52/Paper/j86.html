@@ -1,0 +1,61 @@
+<!--IMP-->
+<!--Form validation with Predefined validations and Custom message-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <style>
+    input {
+      margin-bottom: 10px;
+      display: block;
+    }
+    #msg {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" 
+           required minlength="3" placeholder="Enter your name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" 
+           required placeholder="Enter your email">
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" 
+           required minlength="6" placeholder="Enter your password">
+
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" 
+           required min="18" max="100" placeholder="Enter your age">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    const form = document.getElementById("myForm");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent default submission
+
+      // Use checkValidity() to see if the form is valid
+      if (form.checkValidity()) {
+        msg.innerHTML = "<span style='color:green;'>Form submitted successfully!</span>";
+        // You can submit the form here if needed
+        // form.submit();
+      } else {
+        msg.innerHTML = "<span style='color:red;'>Please fill all fields correctly.</span>";
+        form.reportValidity(); // Show browser default messages for invalid fields
+      }
+    });
+  </script>
+</body>
+</html>

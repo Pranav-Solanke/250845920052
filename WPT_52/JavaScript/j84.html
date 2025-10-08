@@ -1,0 +1,108 @@
+<!--IMP-->
+<!--Complete form Validation without predifined validation-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <style>
+    .error {
+      color: red;
+      font-size: 14px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myForm">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name">
+    <span class="error" id="nameError"></span><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email">
+    <span class="error" id="emailError"></span><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password">
+    <span class="error" id="passwordError"></span><br>
+
+    <label for="age">Age:</label><br>
+    <input type="number" id="age" name="age">
+    <span class="error" id="ageError"></span><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="msg"></p>
+
+  <script>
+    const form = document.getElementById("myForm");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Get form values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const age = document.getElementById("age").value.trim();
+
+      // Clear previous errors
+      document.getElementById("nameError").innerHTML = "";
+      document.getElementById("emailError").innerHTML = "";
+      document.getElementById("passwordError").innerHTML = "";
+      document.getElementById("ageError").innerHTML = "";
+      document.getElementById("msg").innerHTML = "";
+
+      let valid = true;
+
+      // Name validation
+      if (name === "") {
+        document.getElementById("nameError").innerHTML = "<strong>Name is required</strong>";
+        valid = false;
+      } else if (name.length < 3) {
+        document.getElementById("nameError").innerHTML = "<strong>Name must be at least 3 characters</strong>";
+        valid = false;
+      }
+
+      // Email validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (email === "") {
+        document.getElementById("emailError").innerHTML = "<strong>Email is required</strong>";
+        valid = false;
+      } else if (!emailPattern.test(email)) {
+        document.getElementById("emailError").innerHTML = "<strong>Invalid email format</strong>";
+        valid = false;
+      }
+
+      // Password validation
+      if (password === "") {
+        document.getElementById("passwordError").innerHTML = "<strong>Password is required</strong>";
+        valid = false;
+      } else if (password.length < 6) {
+        document.getElementById("passwordError").innerHTML = "<strong>Password must be at least 6 characters</strong>";
+        valid = false;
+      }
+
+      // Age validation
+      if (age === "") {
+        document.getElementById("ageError").innerHTML = "<strong>Age is required</strong>";
+        valid = false;
+      } else if (isNaN(age) || age < 18 || age > 100) {
+        document.getElementById("ageError").innerHTML = "<strong>Age must be between 18 and 100</strong>";
+        valid = false;
+      }
+
+      // If all validations pass
+      if (valid) {
+        document.getElementById("msg").innerHTML = "<strong style='color:green;'>Form submitted successfully!</strong>";
+        // You can also send form data to server here
+        // form.submit();
+      }
+    });
+  </script>
+</body>
+</html>

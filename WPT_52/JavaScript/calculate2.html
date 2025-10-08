@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical2</title>
+</head>
+<body>
+  <p>Enter a number</p>
+  <input type="text" id="id1">
+  <button type="button" id="b1">Show Table</button>
+  
+  <p id="msg" style="color:red;"></p> <!-- For validation messages -->
+  <p id="p1"></p> <!-- For table result -->
+
+  <script>
+    // Get references to the HTML elements
+    const inputElement = document.getElementById('id1');
+    const buttonElement = document.getElementById('b1');
+    const resultParagraph = document.getElementById('p1');
+    const msg = document.getElementById('msg');
+
+    // Add a click event listener to the button
+    buttonElement.onclick = function() {
+      const value = inputElement.value.trim();
+
+      // Reset messages
+      msg.innerHTML = "";
+      resultParagraph.innerHTML = "";
+
+      // Validation 1: Empty check
+      if (value === "") {
+        msg.innerHTML = "⚠️ Please enter a value!";
+        return;
+      }
+
+      // Validation 2: Number check
+      if (isNaN(value)) {
+        msg.innerHTML = "⚠️ Please enter a valid number!";
+        return;
+      }
+
+      const n = parseInt(value);
+      let tableHTML = `<h3>Table of ${n}</h3>`;
+
+      // Generate the multiplication table
+      for (let i = 1; i <= 10; i++) {
+        tableHTML += `${n} × ${i} = ${n * i}<br>`;
+      }
+
+      // Display the table in the paragraph element
+      resultParagraph.innerHTML = tableHTML;
+    };
+  </script>
+</body>
+</html>

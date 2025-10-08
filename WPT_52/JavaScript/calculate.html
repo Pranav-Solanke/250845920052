@@ -1,0 +1,46 @@
+<!---->
+<!--accept data in 1 text field 
+		validate data is enter or not 
+		if data is in number format display table of that 
+		number-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practical2</title>
+  
+</head>
+<p>Enter a number</p>
+        <input type="text" id="id1">
+        <button type="button" id="b1">Show Table</button>
+        <p id="p1"></p>
+
+        <script>
+            // Get references to the HTML elements
+            const inputElement = document.getElementById('id1');
+            const buttonElement = document.getElementById('b1');
+            const resultParagraph = document.getElementById('p1');
+
+            // Add a click event listener to the button
+            buttonElement.onclick = function()
+            {
+                // Get the value from the input field
+                const n = parseInt(inputElement.value);
+
+                // Generate the multiplication table
+                let tableHTML = '';
+                for (let i = 1; i <= 10; i++)
+                {
+                    tableHTML += `${n} x ${i} = ${n * i}<br>`;
+                }
+                
+                // Display the table in the paragraph element
+                resultParagraph.innerHTML = tableHTML;
+            };
+        </script>
+    </body>    
+    
+
+    
+
+</body>
+</html>

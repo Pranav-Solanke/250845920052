@@ -1,0 +1,46 @@
+<!--Simple form validation-->
+<!--Check if field is empty
+
+Check email format
+
+Check length (like password length)
+
+Show error messages to user-->
+<form id="myForm">
+  <label>Name:</label>
+  <input type="text" id="name">
+  <br><br>
+
+  <label>Email:</label>
+  <input type="email" id="email">
+  <br><br>
+
+  <button type="submit">Submit</button>
+</form>
+
+<p id="msg"></p>
+
+<script>
+let form = document.getElementById("myForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let msg = document.getElementById("msg");
+
+  if (name === "" || email === "") {
+    msg.textContent = "❌ Please fill out all fields!";
+    msg.style.color = "red";
+  } 
+  else if (!email.includes("@")) {
+    msg.textContent = "❌ Invalid email format!";
+    msg.style.color = "red";
+  } 
+  else {
+    msg.textContent = "✅ Form submitted successfully!";
+    msg.style.color = "green";
+  }
+});
+</script>

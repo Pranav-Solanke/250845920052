@@ -1,0 +1,46 @@
+<!--Complete Validation Form-->
+<form id="registerForm">
+  <label>Username:</label>
+  <input type="text" id="username"><br><br>
+
+  <label>Password:</label>
+  <input type="password" id="password"><br><br>
+
+  <label>Email:</label>
+  <input type="text" id="email"><br><br>
+
+  <button type="submit">Register</button>
+</form>
+
+<script>
+let form = document.getElementById("registerForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault(); // Stop page reload
+
+  let user = document.getElementById("username").value.trim();
+  let pass = document.getElementById("password").value.trim();
+  let email = document.getElementById("email").value.trim();
+
+  // Check for empty fields
+  if (user === "" || pass === "" || email === "") {
+    alert("All fields are required!");
+    return;
+  }
+
+  // Check password length
+  if (pass.length < 6) {
+    alert("Password must be at least 6 characters long!");
+    return;
+  }
+
+  // Simple email pattern validation
+  let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Invalid email format!");
+    return;
+  }
+
+  alert("Registration successful!");
+});
+</script>

@@ -1,0 +1,8 @@
+<?php
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
+$age = $_POST['age'] ?? '';
+
+echo "Received data: Name=$name, Email=$email, Password=$password, Age=$age";
+?>
