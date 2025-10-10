@@ -12,9 +12,9 @@ public class SalariedEmp extends Employee
 		sal=0;
 		bonus=0;
 	}
-	public SalariedEmp(String name, Date bdate, String dept, String desg, double sal)
+	public SalariedEmp(String id,String name, Date bdate, String dept, String desg, double sal)
 	{
-		super(name, bdate, dept, desg);
+		super(id,name, bdate, dept, desg);
 		this.sal=sal;
 		this.bonus=sal*0.10;
 	}
