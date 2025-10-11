@@ -54,7 +54,7 @@ public class Person
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		String str = sdf.format(bdate);
 		
-		return "Person [id=" + id + ", name=" + name + ", bdate=" + str + "]";
+		return "[id=" + id + ", name=" + name + ", bdate=" + str + "]";
 	}
 	
 }

@@ -2,6 +2,7 @@ package com.demo.test;
 
 import java.util.Scanner;
 
+import com.demo.beans.Employee;
 import com.demo.service.EmployeeService;
 
 public class TestEmployeeMgntSystem {
@@ -20,7 +21,16 @@ public class TestEmployeeMgntSystem {
 		switch(choice)
 		{
 		case 1:
-			EmployeeService.addEmp();
+			boolean status =EmployeeService.addEmp();
+			
+			if(status)
+			{
+				System.out.println("Employee added successfully");
+			}
+			else
+			{
+				System.out.println("Employee not added");
+			}
 			break;
 			
 		case 2:
@@ -28,21 +38,50 @@ public class TestEmployeeMgntSystem {
 			break;
 			
 		case 3:
+			Employee e =EmployeeService.searchById();
+			if(e!=null)
+			{
+				System.out.println(e);
+			}
+			else
+			{
+				System.out.println("Employee does not exists");
+			}
 			break;
 			
 		case 4:
+			status = EmployeeService.modifyById();
+			if(status) {
+				System.out.println("Updated successfully");
+			}else {
+				System.out.println("not found");
+			}
 			break;
 			
 		case 5:
+			EmployeeService.displaySalariedEmp();
 			break;
 			
 		case 6:
+			EmployeeService.displayContractEmp();
 			break;
 			
 		case 7:
+			Employee emp =EmployeeService.searchByName();
+			
+			if(emp!=null)
+			{
+				System.out.println(emp);
+			}
+			else
+			{
+				System.out.println("not found");
+			}
 			break;
 			
 		case 8:
+			EmployeeService.CalNetSalary();
+			
 			break;
 			
 		case 9:
